@@ -3,7 +3,7 @@ import { Footer } from './components/footer'
 
 function App() {
   return (
-    <main className="max-h-screen">
+    <main className="max-h-screen flex flex-col">
       <Footer />
     </main>
   )
