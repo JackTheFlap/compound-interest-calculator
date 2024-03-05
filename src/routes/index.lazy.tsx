@@ -66,9 +66,6 @@ function Index() {
     const [summaryData, setSummaryData] = useState<CalcSummaryData>();
     const [tableData, setTableData] = useState<CalcYearlyTableData[]>();
     const onFormSubmit = (formData: z.infer<typeof CompoundInterestForm>) => {
-        console.log(formData);
-        //ToDo: Don't save to state, calculate then save actual results data to state.
-        //ready to be passed into CalcSummary and CalcYearlyTable
         setSummaryData({
             initialBalance: ConstructCurrencyString(formData.currency, formData.initialInvestment),
             additionalDeposits: ConstructCurrencyString(formData.currency, (formData.monthlyDeposits * 12) * formData.numOfYears),
@@ -102,13 +99,11 @@ function Index() {
         <>
             <section className='container flex flex-col justify-center mb-4 md:flex-row'>
                 <CalcForm onFormSubmit={onFormSubmit} />
-                {summaryData && <CalcSummary data={summaryData!} />}
+                <CalcSummary data={summaryData} />
             </section>
-            {tableData &&
-                <section className="flex items-center justify-center max-w-7xl">
-                    <CalcYearlyTable data={tableData} />
-                </section>
-            }
+            <section className="flex items-center justify-center max-w-7xl">
+                <CalcYearlyTable data={tableData} />
+            </section>
         </>
     )
 }

@@ -5,6 +5,7 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useAutoAnimate } from '@formkit/auto-animate/react'
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -30,6 +31,7 @@ type CalcFormProps = {
 }
 
 const CalcForm = (props: CalcFormProps) => {
+    const [animateRef] = useAutoAnimate();
     const { register, handleSubmit, formState: { errors } } = useForm<z.infer<typeof CompoundInterestForm>>({
         resolver: zodResolver(CompoundInterestForm),
         defaultValues: {
@@ -47,7 +49,7 @@ const CalcForm = (props: CalcFormProps) => {
         console.error(errors);
     }
     return (
-        <Card className="mx-2">
+        <Card className="mx-2 animate-smooth-fade-in">
             <CardContent className="mt-4">
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <Label>Currency</Label>
@@ -57,19 +59,19 @@ const CalcForm = (props: CalcFormProps) => {
                         <option value="€">€</option>
                         <option value={" "}>No Currency</option>
                     </select>
-                    <p className="text-red-600 text-wrap">{errors.currency?.message}</p>
+                    <p className="text-red-600 text-wrap" ref={animateRef}>{errors.currency?.message}</p>
                     <Label htmlFor="initial">Initial Investment</Label>
                     <Input id="initial" step="0.01" aria-invalid={errors.initialInvestment ? "true" : "false"} placeholder="" type="number" {...register("initialInvestment", { required: true, valueAsNumber: true })} />
-                    <p className="text-red-600 text-wrap">{errors.initialInvestment?.message}</p>
+                    <p className="text-red-600 text-wrap" ref={animateRef}>{errors.initialInvestment?.message}</p>
                     <Label htmlFor="interestRate">Interest Rate (%)</Label>
                     <Input id="interestRate" step="0.01" aria-invalid={errors.interestRate ? "true" : "false"} placeholder="" type="number" inputMode="decimal" {...register("interestRate", { required: true, valueAsNumber: true })} />
-                    <p className="text-red-600 text-wrap">{errors.interestRate?.message}</p>
+                    <p className="text-red-600 text-wrap" ref={animateRef}>{errors.interestRate?.message}</p>
                     <Label htmlFor="years">Years</Label>
                     <Input id="years" step="1" aria-invalid={errors.numOfYears ? "true" : "false"} placeholder="" type="number" {...register("numOfYears", { required: true, valueAsNumber: true })} />
-                    <p className="text-red-600 text-wrap">{errors.numOfYears?.message}</p>
+                    <p className="text-red-600 text-wrap" ref={animateRef}>{errors.numOfYears?.message}</p>
                     <Label htmlFor="months">Monthly Deposits</Label>
                     <Input id="months" step="1" aria-invalid={errors.monthlyDeposits ? "true" : "false"} placeholder="" type="number" {...register("monthlyDeposits", { valueAsNumber: true, setValueAs: (val) => Number.isNaN(val) ? 0 : parseFloat(val) })} />
-                    <p className="text-red-600 text-wrap">{errors.monthlyDeposits?.message}</p>
+                    <p className="text-red-600 text-wrap" ref={animateRef}>{errors.monthlyDeposits?.message}</p>
                     <br />
                     <Button className="mt-4" variant={"outline"} type="submit">Calculate</Button>
                 </form>

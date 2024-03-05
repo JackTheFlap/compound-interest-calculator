@@ -10,12 +10,14 @@ import {
 
 
 type CalcYearlyTableProps = {
-    data: CalcYearlyTableData[]
+    data: CalcYearlyTableData[] | undefined
 }
 
 const CalcYearlyTable = (props: CalcYearlyTableProps) => {
+    if (props.data === undefined) return <></>;
+    if (props.data.length === 0) return <></>;
     return (
-        <Table className="mb-8 animate-fade-in">
+        <Table className="mb-8 animate-smooth-fade-in">
             <TableHeader>
                 <TableRow>
                     <TableHead className="w-[100px]">Year</TableHead>
