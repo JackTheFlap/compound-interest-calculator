@@ -3,6 +3,7 @@ import { CalcSummary } from "@/components/calculator/CalcSummary";
 import { CalcYearlyTable } from "@/components/calculator/CalcYearlyTable";
 import { createLazyFileRoute } from '@tanstack/react-router';
 import { useState } from "react";
+import { z } from "zod";
 
 export type CalcSummaryData = {
     initialBalance: string,
@@ -64,7 +65,7 @@ Where:
 function Index() {
     const [summaryData, setSummaryData] = useState<CalcSummaryData>();
     const [tableData, setTableData] = useState<CalcYearlyTableData[]>();
-    const onFormSubmit = (formData: CompoundInterestForm) => {
+    const onFormSubmit = (formData: z.infer<typeof CompoundInterestForm>) => {
         console.log(formData);
         //ToDo: Don't save to state, calculate then save actual results data to state.
         //ready to be passed into CalcSummary and CalcYearlyTable
