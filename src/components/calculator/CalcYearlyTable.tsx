@@ -27,9 +27,9 @@ const CalcYearlyTable = (props: CalcYearlyTableProps) => {
                 </TableRow>
             </TableHeader>
             <TableBody>
-                {props.data.map((curYear) => {
+                {props.data.map((curYear, i) => {
                     return (
-                        <TableRow>
+                        <TableRow key={`tableYearRow${i}`}>
                             <TableCell>{curYear.year}</TableCell>
                             <TableCell>{curYear.interest}</TableCell>
                             <TableCell>{curYear.accruedInterest}</TableCell>

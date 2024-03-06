@@ -62,11 +62,33 @@ const ConstructCurrencyString = (currency: string, value: number) => {
         t = the time in years
         ^ = ... to the power of ... 
 */
+/*
+    Compound Interest Formula with monthly deposits:
+
+    Compound Interest for principle:
+    P(1+r/n)^(nt)
+
+    Future value of a series (with payments at the end of the period):
+    PMT × {[(1 + r/n)^(nt) - 1] / (r/n)}
+
+    Future value of a series (with payments at the start of the period):
+    PMT × {[(1 + r/n)^(nt) - 1] / (r/n)} × (1+r/n)
+
+    Where:
+        A = future value of the investment/loan
+        P = principal investment amount
+        PMT = monthly payment amount
+        r = annual interest rate (decimal)
+        n = number of times interest is compounded per year
+        t = time in years
+        ^ = ... to the power of ...
+*/
 
 function Index() {
     const [summaryData, setSummaryData] = useState<CalcSummaryData>();
     const [tableData, setTableData] = useState<CalcYearlyTableData[]>();
     const onFormSubmit = (formData: z.infer<typeof CompoundInterestForm>) => {
+        console.log(formData);
         setSummaryData({
             initialBalance: ConstructCurrencyString(formData.currency, formData.initialInvestment),
             additionalDeposits: ConstructCurrencyString(formData.currency, (formData.monthlyDeposits * 12) * formData.numOfYears),
