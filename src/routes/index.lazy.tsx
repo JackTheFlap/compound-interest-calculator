@@ -47,10 +47,11 @@ const ConstructCurrencyString = (currency: string, value: number) => {
     return str;
 }
 
+//Below formulas: https://www.thecalculatorsite.com/finance/calculators/compound-interest-formula
 /*
     Compound Interest Formula:
 
-    A = P(1+r/n)^nt
+    A = P(1+r/n)^(nt)
 
     Where:
 

@@ -1,30 +1,42 @@
-# React + TypeScript + Vite
+# Compound Interest Calculator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a compound interest calculator created to display interest earnings from long term investments. I was fortunate enough to have a supply teacher in school show me the power of compound interest and have explained to many people the benefits of regular monthly savings. Now, I have a dedicated website to point people towards.
 
-Currently, two official plugins are available:
+Current URL: https://compound-interest-calculator.jacktheflap.com
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Shortened URL: https://jtf.gg/ci
 
-## Expanding the ESLint configuration
+## ToDo
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Monthly deposits
+- Exported data to csv
+- Share URL's with included data
+- Tabbed view to compare multiple results
 
-- Configure the top-level `parserOptions` property like this:
+## Javascript Runtime
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+This project was made using the [Bun](https://bun.sh) Javascript runtime. Feel free to remove the bun.lockb file and use [npm](https://www.npmjs.com/), [yarn](https://yarnpkg.com/) or [pnpm](https://pnpm.io/) instead.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Debug
+
+Run `bun run dev`
+
+## Build
+
+Run `bun run build`
+
+## Credits
+
+- [Vite](https://vitejs.dev/)
+- [React](https://react.dev/)
+- [Bun](https://bun.sh/)
+- [TanStack Router](https://tanstack.com/router/latest/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [shadcn/ui](https://ui.shadcn.com/)
+- [React Hook Form](https://react-hook-form.com/)
+- [AutoAnimate](https://auto-animate.formkit.com/)
+- [Vercel](https://vercel.com/)
+
+## Kickstart
+
+This project was kickstarted with React + TypeScript + Vite using `bun create vite`.

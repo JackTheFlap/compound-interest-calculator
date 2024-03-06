@@ -18,7 +18,7 @@ const NavMenu = () => {
             </Link>
             <div className="flex flex-row items-center sm:ml-auto">
                 <ModeToggle />
-                <a className="ml-2" href="https://github.com/jacktheflap">
+                <a className="ml-2" href="https://github.com/jacktheflap/compound-interest-calculator">
                     <Button variant={"outline"} className="p-2"><Github /></Button>
                 </a>
             </div>
