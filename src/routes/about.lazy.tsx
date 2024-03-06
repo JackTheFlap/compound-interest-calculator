@@ -6,7 +6,7 @@ export const Route = createLazyFileRoute('/about')({
 
 function About() {
     return (
-        <main className='flex flex-col'>
+        <main className='flex flex-col animate-smooth-fade-in'>
             <h2 className='text-3xl font-black text-center'>About</h2>
             <p className='mt-4'>For years I personally used <a href="https://www.thecalculatorsite.com/finance/calculators/compoundinterestcalculator.php" className='underline'>TheCalculatorSite's</a> Compound Interest Calculator. This calculator works great but it's slow (joys of server-side PHP) and I was never happy with the site layout and style. The site felt cluttered and, worst of all, lacked a dark theme 😱!</p>
             <p className='mt-2'>This site was created with Vite & React as a SPA and used many NPM packages such as:</p>

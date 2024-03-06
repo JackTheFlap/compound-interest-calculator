@@ -18,7 +18,7 @@ Shortened URLs:
 - Exported data to csv
 - Share URL's with included data
 - Tabbed view to compare multiple results
-- Fix broken 404
+- ~~Fix broken 404~~
 
 ## Javascript Runtime
 
