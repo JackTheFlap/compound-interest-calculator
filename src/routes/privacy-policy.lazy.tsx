@@ -12,7 +12,7 @@ function PrivacyPolicy() {
     <h3 className="my-2 text-lg text-center">Analytics</h3>
     <p>
       This site uses the open source <a className="underline" href="https://umami.is/">Umami Analytics</a> routed through a subdomain to count website visits, downloads, etc. To view the analytics collected
-      <a className="underline" href="https://al.jacktheflap.com/share/1tochXDm/JackTheFlap-com">click here</a>. No cookies are used and no personal data—not even an IP address or browser user agent—is
+      <a className="underline" href="https://al.jacktheflap.com/share/t0lkVDbnacRxAPB1/compound-interest-calculator.jacktheflap.com">click here</a>. No cookies are used and no personal data—not even an IP address or browser user agent—is
       stored. For more information, see the <a className="underline" href="https://umami.is/privacy">Umami Data Policy.</a>
     </p>
     <h3 className="my-2 text-lg text-center">Projects</h3>
