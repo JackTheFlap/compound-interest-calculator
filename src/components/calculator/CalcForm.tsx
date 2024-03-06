@@ -18,14 +18,6 @@ const CompoundInterestForm = z.object({
     monthlyDeposits: z.number({ invalid_type_error: "Enter a valid monthly deposit" }).gte(0, { message: "Monthly deposits must be positive" }).int().finite({ message: "Monthly deposits must be finite" }),
 })
 
-// export type CompoundInterestForm = {
-//     currency: string,
-//     initialInvestment: number,
-//     interestRate: number,
-//     numOfYears: number,
-//     monthlyDeposits: number
-// }
-
 type CalcFormProps = {
     onFormSubmit: (a: z.infer<typeof CompoundInterestForm>) => void,
 }

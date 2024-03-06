@@ -47,20 +47,20 @@ const ConstructCurrencyString = (currency: string, value: number) => {
     return str;
 }
 
-/*A = P(1+r/n)^nt
+/*
+    Compound Interest Formula:
 
-Where:
+    A = P(1+r/n)^nt
 
-    A = the future value of the investment
-    P = the principal balance
-    r = the annual interest rate (decimal)
-    n = number of times interest is compounded per year
-    t = the time in years
-    ^ = ... to the power of ... 
-    
-    A = P(1 + r/12)^12t
-    
-    */
+    Where:
+
+        A = the future value of the investment
+        P = the principal balance
+        r = the annual interest rate (decimal)
+        n = number of times interest is compounded per year
+        t = the time in years
+        ^ = ... to the power of ... 
+*/
 
 function Index() {
     const [summaryData, setSummaryData] = useState<CalcSummaryData>();
@@ -79,19 +79,12 @@ function Index() {
         for (let i = 1; i <= formData.numOfYears; i++) {
             localTableData.push({
                 year: i,
-                //interest: `${formData.currency}${curTotalBalance * +((Math.pow(1 + (formData.interestRate / 100) / 12, 12)).toFixed(2))}`,
                 interest: ConstructCurrencyString(formData.currency, curTotalBalance * Math.pow(1 + (formData.interestRate / 100) / 12, 12) - curTotalBalance),
                 accruedInterest: ConstructCurrencyString(formData.currency, (curTotalBalance * Math.pow(1 + (formData.interestRate / 100) / 12, 12) - curTotalBalance) + curTotalInterest),
-                //accruedInterest: `${formData.currency}${curTotalInterest + (curTotalBalance * Math.pow(1 + (formData.interestRate / 100) / 12, 12))}`,
-                //balance: `${formData.currency}${curTotalBalance + (curTotalBalance * +((Math.pow(1 + (formData.interestRate / 100) / 12, 12))).toFixed(2))}`
                 balance: ConstructCurrencyString(formData.currency, curTotalBalance * Math.pow(1 + (formData.interestRate / 100) / 12, 12))
             })
             curTotalInterest += Math.round((curTotalBalance * Math.pow(1 + (formData.interestRate / 100) / 12, 12) - curTotalBalance) * 100) / 100;
             curTotalBalance = (Math.round(curTotalBalance * Math.pow(1 + (formData.interestRate / 100) / 12, 12) * 100) / 100);
-            // console.log(`Year ${i}`);
-            // console.log(`Interest: ${formData.currency}${curTotalBalance * +((Math.pow(1 + (formData.interestRate / 100) / 12, 12)).toFixed(2))}`);
-            // console.log(`Accrued Interest: ${formData.currency}${curTotalInterest + (curTotalBalance * Math.pow(1 + (formData.interestRate / 100) / 12, 12))}`);
-            // console.log(`Balance: ${formData.currency}${curTotalBalance + (curTotalBalance * +((Math.pow(1 + (formData.interestRate / 100) / 12, 12))).toFixed(2))}`);
         }
         setTableData(localTableData);
     }
