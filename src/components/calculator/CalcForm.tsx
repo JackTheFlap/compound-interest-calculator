@@ -45,7 +45,7 @@ const CalcForm = (props: CalcFormProps) => {
             <CardContent className="mt-4">
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <Label>Currency</Label>
-                    <select className="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1" {...register("currency")}>
+                    <select className="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 mb-4" {...register("currency")}>
                         <option value="£">£</option>
                         <option value="$">$</option>
                         <option value="€">€</option>
@@ -53,13 +53,13 @@ const CalcForm = (props: CalcFormProps) => {
                     </select>
                     <p className="text-red-600 text-wrap" ref={animateRef}>{errors.currency?.message}</p>
                     <Label htmlFor="initial">Initial Investment</Label>
-                    <Input id="initial" step="0.01" aria-invalid={errors.initialInvestment ? "true" : "false"} placeholder="" type="number" {...register("initialInvestment", { required: true, valueAsNumber: true })} />
+                    <Input className="mb-4" id="initial" step="0.01" aria-invalid={errors.initialInvestment ? "true" : "false"} placeholder="" type="number" {...register("initialInvestment", { required: true, valueAsNumber: true })} />
                     <p className="text-red-600 text-wrap" ref={animateRef}>{errors.initialInvestment?.message}</p>
                     <Label htmlFor="interestRate">Interest Rate (%)</Label>
-                    <Input id="interestRate" step="0.01" aria-invalid={errors.interestRate ? "true" : "false"} placeholder="" type="number" inputMode="decimal" {...register("interestRate", { required: true, valueAsNumber: true })} />
+                    <Input className="mb-4" id="interestRate" step="0.01" aria-invalid={errors.interestRate ? "true" : "false"} placeholder="" type="number" inputMode="decimal" {...register("interestRate", { required: true, valueAsNumber: true })} />
                     <p className="text-red-600 text-wrap" ref={animateRef}>{errors.interestRate?.message}</p>
                     <Label htmlFor="years">Years</Label>
-                    <Input id="years" step="1" aria-invalid={errors.numOfYears ? "true" : "false"} placeholder="" type="number" {...register("numOfYears", { required: true, valueAsNumber: true })} />
+                    <Input className="mb-4" id="years" step="1" aria-invalid={errors.numOfYears ? "true" : "false"} placeholder="" type="number" {...register("numOfYears", { required: true, valueAsNumber: true })} />
                     <p className="text-red-600 text-wrap" ref={animateRef}>{errors.numOfYears?.message}</p>
                     <Label htmlFor="months">Monthly Deposits</Label>
                     <Input id="months" step="1" aria-invalid={errors.monthlyDeposits ? "true" : "false"} placeholder="" type="number" {...register("monthlyDeposits", { valueAsNumber: true, setValueAs: (val) => Number.isNaN(val) ? 0 : parseFloat(val) })} />
