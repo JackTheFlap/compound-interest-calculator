@@ -4,10 +4,16 @@ This project is a compound interest calculator created to display interest earni
 
 Current URL: https://compound-interest-calculator.jacktheflap.com
 
-Shortened URL: https://jtf.gg/ci
+Shortened URLs:
+
+- https://jtf.gg/ci
+- https://jtf.gg/cic
 
 ## ToDo
 
+- Publish to GitHub
+- Deploy to Vercel
+- Generate Sitemap
 - Monthly deposits
 - Exported data to csv
 - Share URL's with included data
