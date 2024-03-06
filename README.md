@@ -11,13 +11,14 @@ Shortened URLs:
 
 ## ToDo
 
-- Publish to GitHub
-- Deploy to Vercel
-- Generate Sitemap
+- ~~Publish to GitHub~~
+- ~~Deploy to Vercel~~
+- ~~Generate Sitemap~~
 - Monthly deposits
 - Exported data to csv
 - Share URL's with included data
 - Tabbed view to compare multiple results
+- Fix broken 404
 
 ## Javascript Runtime
 
