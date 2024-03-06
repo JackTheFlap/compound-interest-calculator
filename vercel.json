@@ -7,6 +7,10 @@
     {
       "source": "/api/send",
       "destination": "https://al.jacktheflap.com/api/send"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/"
     }
   ]
 }
