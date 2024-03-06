@@ -61,9 +61,9 @@ const CalcForm = (props: CalcFormProps) => {
                     <Label htmlFor="years">Years</Label>
                     <Input className="mb-4" id="years" step="1" aria-invalid={errors.numOfYears ? "true" : "false"} placeholder="" type="number" {...register("numOfYears", { required: true, valueAsNumber: true })} />
                     <p className="text-red-600 text-wrap" ref={animateRef}>{errors.numOfYears?.message}</p>
-                    <Label htmlFor="months">Monthly Deposits</Label>
+                    {/* <Label htmlFor="months">Monthly Deposits</Label>
                     <Input id="months" step="1" aria-invalid={errors.monthlyDeposits ? "true" : "false"} placeholder="" type="number" {...register("monthlyDeposits", { valueAsNumber: true, setValueAs: (val) => Number.isNaN(val) ? 0 : parseFloat(val) })} />
-                    <p className="text-red-600 text-wrap" ref={animateRef}>{errors.monthlyDeposits?.message}</p>
+                    <p className="text-red-600 text-wrap" ref={animateRef}>{errors.monthlyDeposits?.message}</p> */}
                     <br />
                     <Button className="mt-4" variant={"outline"} type="submit">Calculate</Button>
                 </form>

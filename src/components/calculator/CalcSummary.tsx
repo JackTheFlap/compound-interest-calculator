@@ -14,9 +14,9 @@ const CalcSummary = (props: CalcSummaryProps) => {
             <div className="flex flex-col justify-between py-8 pt-0 pb-6 m-4 h-[96%]">
                 <p className="text-xl font-black">Initial balance</p>
                 <p className="">{props.data.initialBalance}</p>
-                <Separator />
+                {/* <Separator />
                 <p className="text-xl font-black">Additional deposits</p>
-                <p className="">{props.data.additionalDeposits}</p>
+                <p className="">{props.data.additionalDeposits}</p> */}
                 <Separator />
                 <p className="text-xl font-black text-amber-600">Total interest earned</p>
                 <p className="">{props.data.totalInterestEarned}</p>
