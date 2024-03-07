@@ -4,7 +4,7 @@ import { Separator } from "./ui/separator"
 
 const Disclaimer = () => {
     return (<section className="flex flex-col justify-center mt-4 mb-4 max-w-7xl animate-smooth-fade-in">
-        <p className="font-black ">Disclaimer</p>
+        <p className="mb-2 font-black sm:mb-0">Disclaimer</p>
         <p>The information and tools in this website are given AS IS WITHOUT ANY WARRANTY OF ANY KIND.</p>
         <p>compound-interest-calculator.jacktheflap.com and its contributors will not be liable for any damage or loss resulting from the use of the content or the tools on this website.</p>
     </section>)

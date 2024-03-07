@@ -5,7 +5,7 @@ export const Route = createLazyFileRoute('/privacy-policy')({
 })
 
 function PrivacyPolicy() {
-  return (<main className='animate-smooth-fade-in'>
+  return (<main className='mb-4 animate-smooth-fade-in'>
     <h2 className="text-3xl font-black text-center">Privacy Policy</h2>
     <p className="my-4 text-lg text-center">
       Your data always belongs to you, and only you. I don't collect or sell sensitive
